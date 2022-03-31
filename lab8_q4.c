@@ -1,41 +1,30 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int form_array(){
-    int n;
+int binary_search(int arr[], int l, int r, int x)
+{
+    if (r >= l) {
+        int mid = l + (r - l) / 2;
 
-    printf("Enter the number of elements inside of the array: ");
-    scanf("%d", &n);
+        if (arr[mid] == x)
+            return mid;
 
-    int arr[n];
-    int *p;
-    p = &arr;
+        if (arr[mid] > x)
+            return binary_search(arr, l, mid - 1, x);
 
-    for (int i=0; i<n; i++){
-        int a;
-        printf("Enter the element: ");
-        scanf("%d", &a);
-
-        arr[i] = a;
+        return binary_search(arr, mid + 1, r, x);
     }
 
-    return p;
-
+    return -1;
 }
 
-int binary_search(array, element){
-    int l, mid;
+int main(void)
+{
+    int arr[] = { 1, 3, 45, 69, 420};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int x = 10;
+    int result = binary_search(arr, 0, n - 1, x);
 
-    l = sizeof(array)/sizeof(array[0]);
-    
-}
+    printf("The element was found at: %d \n",result);  
 
-int main(){
-    int p, e, index;
-    
-    p = form_array();
-
-    printf("Enter the element to tbe found: ");
-    scanf("%d", &e);
-
-    index = binary_search();
+    return 0;
 }
