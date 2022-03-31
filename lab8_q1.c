@@ -18,6 +18,6 @@ area = 3.14 * (*p) * (*p);
 perimeter = 3.14 * 2 * (*p);
 
 printf("The perimeter of the circle is: %f \n", perimeter);
-printf("The area of the circle is: %f /n", area);
+printf("The area of the circle is: %f \n", area);
 
 }
