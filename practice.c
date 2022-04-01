@@ -1,18 +1,22 @@
 #include <stdio.h>
 #include <math.h>
-float random_shit(int);
+#include <ctype.h>
 
-float random_shit(int a){
-    float value=0.0;
-
-    for(int i=1; i<=a; i++){
-        value = value + pow(i,i);
-        printf("%f test \n", pow(i,i));
+void upper(char array[], int n){
+    for (int i=0; i<n; i++){
+        array[i]=toupper(array[i]);
     }
-
-    return value;
 }
 
-int main(){
-    printf("%f \n", random_shit(3));
+void display(char array[], int n){
+    for (int i=0; i<n; i++){
+        printf("%c", array[i]);
+}
+}
+
+void main(){
+    char arr[10] = {'a','b','c','d','e'};
+    int n = 10;
+    upper(arr, n);
+    display(arr, n);
 }
