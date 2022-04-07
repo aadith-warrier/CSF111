@@ -1,22 +1,45 @@
 #include <stdio.h>
-#include <math.h>
-#include <ctype.h>
 
-void upper(char array[], int n){
-    for (int i=0; i<n; i++){
-        array[i]=toupper(array[i]);
-    }
+int main(){
+
+//Define the array and take inputs from the user.
+
+int arr[3][5], val;
+
+
+for (int i=0; i<3; i++){
+
+for (int j=0; j<5; j++){
+
+
+printf("Enter the element: ");
+
+scanf("%d", val);
+
+
 }
 
-void display(char array[], int n){
-    for (int i=0; i<n; i++){
-        printf("%c", array[i]);
-}
 }
 
-void main(){
-    char arr[10] = {'a','b','c','d','e'};
-    int n = 10;
-    upper(arr, n);
-    display(arr, n);
+//Print columns with distinct values
+
+for (int i=0; i<5; i++){
+
+int j =0;
+
+if (arr[j][i]==arr[j+1][i]==arr[j+2][i]){
+
+continue;
+
 }
+
+else{
+
+printf("%d %d %d", arr[j][i], arr[j+1][i], arr[j+2][i]);
+
+}
+
+
+return 0;
+
+}}
